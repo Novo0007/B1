@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+
+
+    * {
+
+      margin: 0;
+
+      padding: 0;
+
+      box-sizing: border-box;
+
+      font-family: "Poppins", Arial, sans-serif;
+
+    }
+
+
+
+    body {
+
+      background: linear-gradient(140deg, #000000, #32005d);
+
+      background-image: url('https://img.clipart-library.com/2/clip-sparkling-gif/clip-sparkling-gif-25.gif');
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+
+      justify-content: center;
+
+      min-height: 100vh;
+
+      color: #664196;
+
+    }
+
+
+
+    header {
+
+      text-align: center;
+
+      font-size: 1.8rem;
+
+      font-weight: 600;
+
+      margin-bottom: 2rem;
+
+      text-shadow: 0px 5px 20px rgb(178 100 255);
+
+      color: #b682fa;
+
+    }
+
+
+
+    main {
+
+      background: rgba(32, 0, 55, 0%);
+
+      border-radius: 20px;
+
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+
+      backdrop-filter: blur(10px);
+
+      -webkit-backdrop-filter: blur(10px);
+
+      border: 1px solid rgba(178, 0, 255, 52%);
+
+      padding: 2rem;
+
+      width: 90%;
+
+      max-width: 600px;
+
+    }
+
+
+
+    .input-container textarea {
+
+      width: 100%;
+
+      padding: 1rem;
+
+      margin-bottom: 1rem;
+
+      border: none;
+
+      border-radius: 12px;
+
+      outline: none;
+
+      font-size: 1rem;
+
+      background-color: rgba(0, 0, 0, 20%);
+
+      color: #fff;
+
+      backdrop-filter: blur(5px);
+
+      -webkit-backdrop-filter: blur(5px);
+
+      resize: vertical;
+
+      min-height: 150px;
+
+      max-height: 300px;
+
+      overflow-y: auto;
+
+      box-sizing: border-box;
+
+    }
+
+
+
+    .button-container {
+
+      text-align: center;
+
+    }
+
+
+
+    button {
+
+      background-color: rgb(106 13 173 / 0%);
+
+      color: #c190ff;
+
+      padding: 0.8rem 1.5rem;
+
+      border: none;
+
+      border-radius: 12px;
+
+      font-size: 1rem;
+
+      cursor: pointer;
+
+      transition: all 0.3s ease;
+
+      box-shadow: 10px -1px 15px 0px rgb(3 21 255 / 41%);
+
+    }
+
+
+
+    button:hover {
+
+      background-color: rgba(122, 30, 214, 0.9);
+
+    }
+
+
+
+    .output-container {
+
+      text-align: center;
+
+      margin-top: 2rem;
+
+    }
+
+
+
+    .output-container img {
+
+      max-width: 100%;
+
+      border-radius: 12px;
+
+      margin-top: 1rem;
+
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+
+    }
+
+
+
+    .loader {
+
+  width: 50px;
+
+  height: 50px;
+
+  border: 8px solid transparent;
+
+  border-radius: 50%;
+
+  border-top: 8px solid #6a0dad;
+
+  border-bottom: 8px solid #6a0dad;
+
+  animation: spin 1s linear infinite, colorChange 1.5s ease-in-out infinite;
+
+  margin: 1.5rem auto;
+
+  display: none;
+
+}
+
+
+
+@keyframes spin {
+
+  0% {
+
+    transform: rotate(0deg);
+
+  }
+
+  100% {
+
+    transform: rotate(360deg);
+
+  }
+
+}
+
+
+
+@keyframes colorChange {
+
+  0% {
+
+    border-top: 8px solid #6a0dad;
+
+    border-bottom: 8px solid #6a0dad;
+
+  }
+
+  50% {
+
+    border-top: 8px solid #ff3366;
+
+    border-bottom: 8px solid #ff3366;
+
+  }
+
+  100% {
+
+    border-top: 8px solid #6a0dad;
+
+    border-bottom: 8px solid #6a0dad;
+
+  }
+
+}
+
+
+
+
+
+    a {
+
+      display: inline-block;
+
+      background-color: rgba(255, 255, 255, 0.2);
+
+      color: #fff;
+
+      padding: 1rem .4rem;
+
+      text-decoration: none;
+
+      border-radius: 12px;
+
+      font-size: 1rem;
+
+      margin: 0.5rem;
+
+      transition: all 0.3s ease;
+
+      backdrop-filter: blur(5px);
+
+    }
+
+
+
+    a:hover {
+
+      background-color: rgba(255, 255, 255, 0.3);
+
+    }
+
+
+
+    @keyframes spin {
+
+      0% {
+
+        transform: rotate(0deg);
+
+      }
+
+
+
+      100% {
+
+        transform: rotate(360deg);
+
+      }
+
+    }
+
+
+
+    footer {
+
+      margin-top: 2rem;
+
+      font-size: 0.8rem;
+
+      color: #c183ff;
+
+      text-align: center;
+
+    }
+
+
+
+    .input-container input {
+
+      width: 48%;
+
+      padding: 1rem;
+
+      margin-bottom: 1rem;
+
+      border: none;
+
+      border-radius: 12px;
+
+      outline: none;
+
+      font-size: .7rem;
+
+      background-color: rgba(0, 0, 0, 20%);
+
+      color: #fff;
+
+      backdrop-filter: blur(5px);
+
+      -webkit-backdrop-filter: blur(5px);
+
+      transition: all 0.3s ease;
+
+      box-sizing: border-box;
+
+    }
