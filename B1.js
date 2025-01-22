@@ -1,5 +1,7 @@
-document.addEventListener("DOMContentLoaded", function () {
 
+    document.addEventListener("DOMContentLoaded", function () {
+      const subscribeButton = document.getElementById("subscribeButton");
+      const subscriptionPopup = document.getElementById("subscriptionPopup");
       const generateButton = document.getElementById("generate");
 
       const surpriseButton = document.getElementById("surpriseMe");
@@ -19,8 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
       const downloadButton = document.getElementById("downloadImage");
 
       const voiceInputButton = document.getElementById("voiceInput");
-
-
 
      const randomDescriptions = [
 
@@ -737,3 +737,49 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     });
+
+      // Check if the user is already subscribed
+      if (!localStorage.getItem('subscribed')) {
+        setTimeout(() => {
+          subscriptionPopup.style.display = 'block';
+        }, 1000); // Show popup after 1 second
+      }
+
+      // Handle subscription
+      subscribeButton.addEventListener("click", function () {
+        var options = {
+          key: "rzp_live_X4DZnSdUxCtfV8", // Replace with your Razorpay Key ID
+          amount: 100, // 10 INR in paise
+          currency: "INR",
+          name: "Image Generator",
+          description: "Weekly Subscription",
+          image: "https://example.com/logo.png", // Optional: Add a logo
+          handler: function (response) {
+            if (response.razorpay_payment_id) {
+              alert("Payment successful!");
+              localStorage.setItem('subscribed', true);
+              subscriptionPopup.style.display = 'none';
+            }
+          },
+          prefill: {
+            name: "User Name",
+            email: "user@example.com",
+            contact: "9876543210",
+          },
+          theme: {
+            color: "#6a0dad"
+          }
+        };
+        var rzp1 = new Razorpay(options);
+        rzp1.open();
+      });
+
+      // Set interval to show subscription at 10 AM every week
+      setInterval(() => {
+        const currentHour = new Date().getHours();
+        if (currentHour === 10 && !localStorage.getItem('subscribed')) {
+          subscriptionPopup.style.display = 'block';
+        }
+      }, 3600000); // Check every hour
+
+  
