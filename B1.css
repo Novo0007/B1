@@ -1,3 +1,4 @@
+   /* Existing styles... */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 
@@ -352,4 +353,32 @@
 
       box-sizing: border-box;
 
+    }
+    /* Add styles for the subscription popup */
+    .subscription-popup {
+      display: none;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      font-size: 2.2rem;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      z-index: 1000;
+    }
+
+    .subscription-popup button {
+          background-color: #6a0dad;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-size: 3.2rem;
+    cursor: pointer;
+    color: white;
+    }
+
+    .subscription-popup button:hover {
+      background-color: #ff3366;
     }
