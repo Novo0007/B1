@@ -749,7 +749,7 @@
       subscribeButton.addEventListener("click", function () {
         var options = {
           key: "rzp_live_X4DZnSdUxCtfV8", // Replace with your Razorpay Key ID
-          amount: 100, // 10 INR in paise
+          amount: 2000, // 10 INR in paise
           currency: "INR",
           name: "Image Generator",
           description: "Weekly Subscription",
@@ -764,7 +764,7 @@
           prefill: {
             name: "User Name",
             email: "user@example.com",
-            contact: "9876543210",
+            contact: "8016487441",
           },
           theme: {
             color: "#6a0dad"
