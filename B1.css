@@ -1,4 +1,4 @@
-   /* Existing styles... */
+     /* Existing styles... */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
 
 
@@ -355,30 +355,77 @@
 
     }
     /* Add styles for the subscription popup */
-    .subscription-popup {
-      display: none;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      font-size: 2.2rem;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.8);
-      color: white;
-      padding: 20px;
-      border-radius: 10px;
-      z-index: 1000;
-    }
+   .subscription-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, #6a0dad, #ff3366);
+  color: white;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0px 12px 30px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  z-index: 1000;
+  animation: popup-appear 0.6s ease-out;
+}
 
-    .subscription-popup button {
-          background-color: #6a0dad;
-    padding: 1rem 2rem;
-    border: none;
-    border-radius: 12px;
-    font-size: 3.2rem;
-    cursor: pointer;
-    color: white;
-    }
+.subscription-popup h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+  text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+}
 
-    .subscription-popup button:hover {
-      background-color: #ff3366;
-    }
+.subscription-popup p {
+  font-size: 1.6rem;
+  margin-bottom: 25px;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+}
+
+.subscription-popup button {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  padding: 1.2rem 2.5rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  text-shadow: 0px 2px 5px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.subscription-popup button:hover {
+  transform: scale(1.1);
+  box-shadow: 0px 8px 25px rgba(255, 126, 95, 0.6);
+}
+
+@keyframes popup-appear {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -60%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 999;
+  backdrop-filter: blur(8px);
+}
+
+.show {
+  display: block;
+}
