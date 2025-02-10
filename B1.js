@@ -1,4 +1,5 @@
 
+    
     document.addEventListener("DOMContentLoaded", function () {
       const subscribeButton = document.getElementById("subscribeButton");
       const subscriptionPopup = document.getElementById("subscriptionPopup");
@@ -565,6 +566,7 @@
     "A futuristic city with glowing skyscrapers and flying vehicles"
 
    
+   
 
 ];
 
@@ -738,48 +740,92 @@
 
     });
 
-      // Check if the user is already subscribed
-      if (!localStorage.getItem('subscribed')) {
-        setTimeout(() => {
-          subscriptionPopup.style.display = 'block';
-        }, 1000); // Show popup after 1 second
-      }
+ document.addEventListener("DOMContentLoaded", function () {
+  const subscriptionPopup = document.getElementById("subscriptionPopup");
+  const overlay = document.getElementById("overlay");
+  const subscribeButton = document.getElementById("subscribeButton");
 
-      // Handle subscription
-      subscribeButton.addEventListener("click", function () {
-        var options = {
-          key: "rzp_live_X4DZnSdUxCtfV8", // Replace with your Razorpay Key ID
-          amount: 2000, // 10 INR in paise
-          currency: "INR",
-          name: "Image Generator",
-          description: "Weekly Subscription",
-          image: "https://example.com/logo.png", // Optional: Add a logo
-          handler: function (response) {
-            if (response.razorpay_payment_id) {
-              alert("Payment successful!");
-              localStorage.setItem('subscribed', true);
-              subscriptionPopup.style.display = 'none';
-            }
-          },
-          prefill: {
-            name: "User Name",
-            email: "user@example.com",
-            contact: "8016487441",
-          },
-          theme: {
-            color: "#6a0dad"
-          }
-        };
-        var rzp1 = new Razorpay(options);
-        rzp1.open();
-      });
+  // Show popup after 1 second
+  setTimeout(() => {
+    if (!localStorage.getItem('subscribed')) {
+      subscriptionPopup.style.display = 'block';
+      overlay.style.display = 'block';
+    }
+  }, 1000);
 
-      // Set interval to show subscription at 10 AM every week
-      setInterval(() => {
-        const currentHour = new Date().getHours();
-        if (currentHour === 10 && !localStorage.getItem('subscribed')) {
-          subscriptionPopup.style.display = 'block';
+  // Handle subscription button click
+  subscribeButton.addEventListener("click", function () {
+    // Razorpay payment integration
+    var options = {
+      key: "rzp_live_X4DZnSdUxCtfV8", // Replace with your Razorpay Key ID
+      amount: 2000, // 20 INR in paise (2000 paise = ₹20)
+      currency: "INR",
+      name: "Image Generator",
+      description: "Weekly Subscription",
+      image: "https://example.com/logo.png", // Optional: Add a logo
+      handler: function (response) {
+        if (response.razorpay_payment_id) {
+          alert("Payment successful!");
+          localStorage.setItem('subscribed', true); // Save subscription status
+          subscriptionPopup.style.display = 'none';
+          overlay.style.display = 'none';
         }
-      }, 3600000); // Check every hour
+      },
+      prefill: {
+        name: "User Name",
+        email: "user@example.com",
+        contact: "8016487441",
+      },
+      theme: {
+        color: "#6a0dad"
+      }
+    };
 
-  
+    // Open Razorpay payment modal
+    var rzp1 = new Razorpay(options);
+    rzp1.open();
+  });
+
+  // Set interval to show subscription popup at 10 AM on the 1st day of every month
+  setInterval(() => {
+    const now = new Date();
+    const currentHour = now.getHours();
+    const currentDay = now.getDate(); // Get the day of the month (1-31)
+
+    // Check if it's 10 AM on the 1st day of the month and the user is not subscribed
+    if (currentHour === 10 && currentDay === 1 && !localStorage.getItem('subscribed')) {
+      subscriptionPopup.style.display = 'block';
+      overlay.style.display = 'block';
+    }
+  }, 3600000); // Check every hour
+});
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const darkModeToggle = document.getElementById("darkModeToggle");
+  const body = document.body;
+
+  // Check if dark mode is enabled in localStorage
+  const isDarkMode = localStorage.getItem("darkMode") === "enabled";
+
+  // Apply dark mode if it was enabled
+  if (isDarkMode) {
+    body.classList.add("dark-mode");
+    darkModeToggle.textContent = "☀️ Light Mode";
+  }
+
+  // Toggle dark mode
+  darkModeToggle.addEventListener("click", function () {
+    body.classList.toggle("dark-mode");
+    const isDarkModeEnabled = body.classList.contains("dark-mode");
+
+    // Debugging
+    console.log("Dark mode toggled:", isDarkModeEnabled);
+
+    // Update button text
+    darkModeToggle.textContent = isDarkModeEnabled ? "☀️ Light Mode" : "🌙 Dark Mode";
+
+    // Save preference in localStorage
+    localStorage.setItem("darkMode", isDarkModeEnabled ? "enabled" : "disabled");
+  });
+});
