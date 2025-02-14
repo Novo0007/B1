@@ -762,7 +762,7 @@
       currency: "INR",
       name: "Image Generator",
       description: "Weekly Subscription",
-      image: "https://example.com/logo.png", // Optional: Add a logo
+      image: "https://firebasestorage.googleapis.com/v0/b/spirit-fc16f.appspot.com/o/video%2Fz.gif?alt=media&token=aceff4b2-f35e-4c1d-ac07-4d3d8776a45f", // Optional: Add a logo
       handler: function (response) {
         if (response.razorpay_payment_id) {
           alert("Payment successful!");
@@ -773,7 +773,7 @@
       },
       prefill: {
         name: "User Name",
-        email: "user@example.com",
+        email: "helpzappy@gmail.com",
         contact: "8016487441",
       },
       theme: {
