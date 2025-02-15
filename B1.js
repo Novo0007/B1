@@ -751,7 +751,7 @@
       subscriptionPopup.style.display = 'block';
       overlay.style.display = 'block';
     }
-  }, 1000);
+  }, 50000);
 
   // Handle subscription button click
   subscribeButton.addEventListener("click", function () {
@@ -811,7 +811,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Apply dark mode if it was enabled
   if (isDarkMode) {
     body.classList.add("dark-mode");
-    darkModeToggle.textContent = "☀️ Light Mode";
+    darkModeToggle.textContent = "☀️";
   }
 
   // Toggle dark mode
@@ -823,7 +823,7 @@ document.addEventListener("DOMContentLoaded", function () {
     console.log("Dark mode toggled:", isDarkModeEnabled);
 
     // Update button text
-    darkModeToggle.textContent = isDarkModeEnabled ? "☀️ Light Mode" : "🌙 Dark Mode";
+    darkModeToggle.textContent = isDarkModeEnabled ? "☀️ " : "🌙 ";
 
     // Save preference in localStorage
     localStorage.setItem("darkMode", isDarkModeEnabled ? "enabled" : "disabled");
