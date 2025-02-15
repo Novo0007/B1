@@ -8,7 +8,7 @@
 }
 
 body {
-  background: linear-gradient(135deg, #f5a623, #ff4b5c);
+  background: linear-gradient(to bottom right, #f8dff0, #d0e0f8);
   background-image: url('https://example.com/cartoon-background.jpg');
   display: flex;
   flex-direction: column;
@@ -16,42 +16,29 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  color: #fff;
-  animation: backgroundAnimation 10s infinite alternate;
+  color: black;
+ 
 }
 
-@keyframes backgroundAnimation {
-  0% {
-    background: linear-gradient(135deg, #f5a623, #ff4b5c);
-  }
-  50% {
-    background: linear-gradient(135deg, #ff5b77, #ffea00);
-  }
-  100% {
-    background: linear-gradient(135deg, #f5a623, #ff4b5c);
-  }
-}
 
 header {
   text-align: center;
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 2rem;
-  color: #fff;
+  color: black;
   text-shadow: 0px 5px 20px rgba(255, 255, 255, 0.8);
 }
 
 main {
   background: rgba(255, 255, 255, 0.3);
-  border-radius: 20px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-  padding: 2rem;
-  width: 90%;
-  max-width: 600px;
-  border: 3px solid #fff;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  animation: floatAnimation 1s ease-in-out infinite;
+    border-radius: 20px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+    width: 100%;
+    max-width: 600px;
+    border: 3px solid #fff;
+    backdrop-filter: blur(10px);
 }
 
 @keyframes floatAnimation {
@@ -92,21 +79,42 @@ main {
 }
 
 button {
-  background-color: #ff4b5c;
-  color: #fff;
-  padding: 0.8rem 1.5rem;
-  border: none;
-  border-radius: 25px;
-  font-size: 1.2rem;
-  cursor: pointer;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    background:black;
+    color: white;
+    padding: 12px 24px;
+    font-size: 1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.5), 0 0 20px rgba(0, 0, 255, 0.5);
+}
+
+button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 255, 255, 0.5) 0%, rgba(0, 0, 255, 0) 60%);
+    transition: all 0.5s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+}
+
+button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
 }
 
 button:hover {
-  background-color: #ff3366;
-  transform: translateY(-5px);
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.8), 0 0 25px rgba(0, 0, 255, 0.8);
 }
+
 
 .output-container {
   text-align: center;
@@ -155,7 +163,7 @@ button:hover {
 a {
   display: inline-block;
   background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
+  color: black;
   padding: 1rem .4rem;
   text-decoration: none;
   border-radius: 12px;
@@ -172,7 +180,7 @@ a:hover {
 footer {
   margin-top: 2rem;
   font-size: 1rem;
-  color: #fff;
+  color: black;
   text-align: center;
 }
 
@@ -180,7 +188,7 @@ footer {
 .subscription-popup {
   display: none;
   position: fixed;
-  top: 50%;
+  top: -10%;
   left: 50%;
   transform: translate(-50%, -50%);
   background: #ffffff;
@@ -248,7 +256,8 @@ footer {
   height: 100%;
   background: rgba(0, 0, 0, 0.8);
   z-index: 999;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(2px);
+  
 }
 
 .show {
