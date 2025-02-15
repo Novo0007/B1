@@ -1,13 +1,5 @@
-
-
-
-
 <!DOCTYPE html>
-
 <html lang="en">
-
-
-
 <head>
 
   <meta charset="UTF-8">
@@ -24,16 +16,15 @@
 
 
 <body>
-<header>Create Your Imagination ❤️<button id="darkModeToggle">🌙 Dark Mode</button></header>
+<header>JerryAi ❤️</header>
 
   <main>
     <div class="input-container">
       <textarea id="prompt" placeholder="Enter your image description"></textarea>
       <input id="hInput" type="number" placeholder="Height (e.g., 360)" />
       <input id="wInput" type="number" placeholder="Width (e.g., 480)" />
-      <button id="voiceInput">🎤 Voice Input</button>
-      <button id="surpriseMe">Random 🎲</button>
-      <button id="generate">Create Image ✨️</button>
+     
+      
     </div>
 
     <div class="output-container">
@@ -42,27 +33,31 @@
       <div id="image-container"></div>
       <div id="utilities">
         <a id="downloadImage" href="" download="generated-image.png" style="display: none;">Tap to Download ✨️</a>
+        <button id="surpriseMe">Random</button>
+      <button id="generate">Generated✨️</button>
       </div>
     </div>
 
   <!-- Subscription Popup -->
 <div class="overlay" id="overlay"></div>
 <div class="subscription-popup" id="subscriptionPopup">
-  <h2>Professional</h2>
+  <h2>Starter</h2><p class="price">₹20/mo</p>
   <p>This plan is for teams and businesses that need advanced image generation tools to scale their creative projects.</p>
   <ul>
+
     <li>✅ Unlimited Image</li>
     <li>✅ Early access new features</li>
     <li>✅ Unlimited download</li>
     <li class="highlight">Advanced image generation tools</li>
   </ul>
-  <p class="price">₹20/mo</p>
-  <button id="subscribeButton">Choose Plan</button>
+  
+  <button id="subscribeButton">Get started</button>
 </div>
 
   </main>
 
   <footer>
+    <button id="darkModeToggle">🌙</button> <button id="voiceInput">Voice</button><br>
     <p>✨ Powered by JavaScript | FROM NNC ✨</p>
   </footer>
 
